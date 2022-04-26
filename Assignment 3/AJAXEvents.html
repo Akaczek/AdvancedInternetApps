@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            // $(document).ready(function () {
+            //     alert('Did you know that you can copy this text using Ctrl + C shortcut? ');
+            // });
+            // (function($){
+            //     $.fn.edit = function(){
+            //         $('td').css('color', 'red');
+            //         return this;
+            //     };
+            // })(jQuery);
+            // $(document).ready(function(){
+            //     $('td').one('click', edit());
+            // });
+            function edit(e){
+                $(this).html('<input type="text" id="edit" value="' + $(this).text() + '"/>'); 
+                $('#edit').focus();
+                $('#edit').blur(function(){
+                    $('#edit').parent().html($('#edit').val());
+                    $(e.target).one('click',edit);
+                });
+                
+            }
+            $(document).ready(function(){
+                $('td').one('click',edit);
+            });
+
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr><td>One</td></tr>
+            <tr><td>Two</td></tr>
+            <tr><td>Three</td></tr>
+            <tr><td>...</td></tr>
+        </table>
+    </body>
+</html>

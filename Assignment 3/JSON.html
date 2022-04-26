@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("button").click(function(){
+            $.getJSON("guitars.json", function(result){
+                $.each(result, function(i, field){
+                    $.each(field, function(i, field){
+                        $.each(field, function(i, field){
+                            $("ul").append("<li>" + field["Brand"] + " " + field["Model"] + "</li>");
+                        });
+                    });
+                });
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <button>Click me!</button>
+    <ul>
+
+    </ul>
+</body>
+</html>

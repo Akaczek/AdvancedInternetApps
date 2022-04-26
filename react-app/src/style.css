@@ -1,0 +1,107 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: bisque;
+}
+
+img{
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.itemBox{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: space-around;
+    height: 300px;
+    width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgb(255, 198, 129);
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.description{
+    width: 250px;
+    margin-left: 20px;
+}
+
+.sideBar{
+    position: fixed;
+}
+
+.addBox{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgb(255, 198, 129);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form > button{
+    margin: 2px;
+}
+
+.filterBox{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgb(255, 198, 129);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.sortBox{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgb(255, 198, 129);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+#minus{
+    font-size: 50px;
+    align-self: flex-start;
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin-left: auto;
+}
+
+.sortBox > button{
+    width: 90px;
+    margin: 2px;
+}
+
+#star{
+    width: 13px;
+    height: 13px;
+}
+
+#title{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+}

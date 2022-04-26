@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+         function get(url) {
+            return new Promise(function(resolve, reject) {
+                var req = new XMLHttpRequest();
+                req.open('GET', url);
+
+                req.onload = function() {
+                if (req.status == 200) {
+                    resolve(req.response);
+                }
+                else {
+                    reject(Error(req.statusText));
+                }
+                };
+
+                req.onerror = function() {
+                    reject(Error("Network Error"));
+                };
+
+                req.send();
+            });
+        }
+        get('guitars.json').then(function(response) {
+            console.log("Success!", response);
+            $('body').append(response);
+        }, function(error) {
+            console.error("Failed!", error);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
